@@ -5,7 +5,7 @@ Returns: a List of integers
 
 
 def moving_zeroes(arr):
-    z = 0  # last non-zero value
+    z = 0  # last non-zero value found at
     for i in range(len(arr)):
         if arr[i] != 0:
             arr[i], arr[z] = arr[z], arr[i]
