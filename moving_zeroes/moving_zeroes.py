@@ -2,10 +2,16 @@
 Input: a List of integers
 Returns: a List of integers
 '''
-def moving_zeroes(arr):
-    # Your code here
 
-    pass
+
+def moving_zeroes(arr):
+    z = 0  # last non-zero value
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            arr[i], arr[z] = arr[z], arr[i]
+            z = i
+
+    return arr
 
 
 if __name__ == '__main__':
