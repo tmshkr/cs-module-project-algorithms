@@ -1,8 +1,11 @@
+from functools import reduce
 '''
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 
+"""
+O(n) time, O(n) space
 
 def single_number(arr):
     counter = {}
@@ -15,6 +18,17 @@ def single_number(arr):
     for num in counter:
         if counter[num] == 1:
             return num
+"""
+
+"""
+# O(n) time, O(1) space
+
+Bitwise XOR will cancel out duplicates, leaving the single number
+"""
+
+
+def single_number(arr):
+    return reduce(lambda a, b: a ^ b, arr)
 
 
 if __name__ == '__main__':
